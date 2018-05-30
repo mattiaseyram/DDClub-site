@@ -4,7 +4,8 @@ import Loadable from 'react-loadable';
 import AppLoader from './common/components/AppLoader';
 
 // Import modules/routes
-import About from './about';
+import Home from './home';
+import PrimaryPage from './primarypage';
 import PageNotFound from './common/components/PageNotFound';
 
 // Code splitting with dynamic import
@@ -18,7 +19,7 @@ const Home = Loadable({
 export default (
 	<Switch>
 		<Route exact path="/" component={Home} />
-		<Route path="/about" component={About} />
+		<Route exact path="/pages/:slug" component={PrimaryPage} />
 		<Route path="*" component={PageNotFound} />
 	</Switch>
 );

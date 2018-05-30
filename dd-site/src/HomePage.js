@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
-//import UserRepos from './containers/UserRepos';
-import './style.css';
 import Butter from 'buttercms';
-
+import {Container} from 'reactstrap';
+import ErrorMessage from './ErrorMessage';
+//import { Link } from 'react-router'
 
 const butter = Butter('35cf95a781728a107f330a1412ebd437cd5025e1');
 
-class Home extends Component {
+class HomePage extends Component {
 
 	constructor(props) {
 		super(props);
@@ -42,12 +41,12 @@ class Home extends Component {
 
 		} else {
 			return (
-				<div>Something broke...</div>
+				<Container>
+                    <ErrorMessage/>
+				</Container>
 			)
 		}
 	}
 }
 
-export default Home;
-
-//	<UserRepos />
+export default HomePage;
